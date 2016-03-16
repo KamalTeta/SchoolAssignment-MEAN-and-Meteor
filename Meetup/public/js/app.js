@@ -1,2 +1,2 @@
 // public/js/app.js
-angular.module('sampleApp', ['ngRoute', 'appRoutes', 'MainCtrl', 'MeetCtrl', 'MeetService']);
+angular.module('sampleApp', ['ngRoute', 'appRoutes', 'MainCtrl', 'MeetCtrl', 'MeetService', 'ui.calendar']);
