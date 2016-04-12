@@ -27,6 +27,8 @@ mongoose.connect(db.url);
 
 require('./config/passport')(passport); // pass passport for configuration
 
+
+var usersRoutes = require('./routes/usersRoutes');
 // set up our express application
 app.use(morgan('dev')); // log every request to the console
 app.use(cookieParser()); // read cookies (needed for auth)
@@ -65,6 +67,8 @@ app.use(express.static(__dirname + '/public'));
 require('./routes.js')(app,passport); // load our routes and pass in our app and fully configured passport
 
 // start app ===============================================
+app.use('/api/admin/users', usersRoutes);
+
 // startup our app at http://localhost:8080
 app.listen(port);               
 
