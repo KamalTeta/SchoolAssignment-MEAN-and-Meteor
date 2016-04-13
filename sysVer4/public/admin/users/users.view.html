@@ -15,8 +15,8 @@
 
       <tr ng-repeat="user in users">
         <td>{{ user.local.email }}</td>
-        <td>{{ user.name }}</td>
-        <td>{{ user.role }}</td>
+        <td>{{ user.local.fullname }}</td>
+        <td>{{ user.local.role }}</td>
         <td><button class="btn btn-success" data-toggle="modal" ng-click="openEditUserModal(user._id)" data-target="#modalUser">Edit</button></td>
         <td><button class="btn btn-danger" ng-click="deleteUser(user._id)" data-toggle="modal" data-target="#modalConfirmDelete">Delete</button></td>
       </tr>
@@ -35,23 +35,23 @@
           
           <form>
             <div class="form-group">
-              <label for="username">Username</label>
-              <input type="text" class="form-control" id="username" ng-model="user.username" placeholder="Username">
+              <label for="username">User email</label>
+              <input type="text" class="form-control" id="username" ng-model="user.local.email" placeholder="User Email">
             </div>
             <div class="form-group">
               <label for="password">Password</label>
-              <input type="password" class="form-control" id="password" ng-model="user.password" placeholder="Password">
+              <input type="password" class="form-control" id="password" ng-model="user.local.password" placeholder="Password">
             </div>
             <div class="form-group">
               <label for="name">Name</label>
-              <input type="text" class="form-control" id="name" ng-model="user.name" placeholder="Name">
+              <input type="text" class="form-control" id="name" ng-model="user.local.name" placeholder="Name">
             </div>
             <div class="form-group">
               <label for="role">Role</label>
-              <select id="role" class="form-control" ng-model="user.role">
+              <select id="role" class="form-control" ng-model="user.local.role">
                 <option value="admin">admin</option>
                 <option value="author">author</option>
-                <option value="reader">reader</option>
+                <option value="default">default</option>
               </select>
             </div>
           </form>
@@ -75,7 +75,7 @@
           <h4 class="modal-title">Do you want to delete the selected user?</h4>
         </div>
         <div class="modal-body">
-          <p>{{ user.username }}</p>
+          <p>{{ user.local.email }}</p>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>

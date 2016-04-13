@@ -15,11 +15,12 @@
     
     var resetUser = function(){
       $scope.user = $scope.user || {};
-      $scope.user.username = "";
-      $scope.user.password = "";
-      $scope.user.name = "";
-      $scope.user.role = "";
-      $scope.user._id = null;
+      $scope.user.local = {};
+      $scope.user.local.email = "";
+      $scope.user.local.password = "";
+      $scope.user.local.name = "";
+      $scope.user.local.role = "";
+      $scope.user.local._id = null;
     };
         
     $scope.openCreateUserModal = function(){

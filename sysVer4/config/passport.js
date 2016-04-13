@@ -37,9 +37,10 @@ module.exports = function(passport) {
         // by default, local strategy uses username and password, we will override with email
         usernameField : 'email',
         passwordField : 'password',
+        nameField: 'fullname',
         passReqToCallback : true // allows us to pass back the entire request to the callback
     },
-    function(req, email, password, done) {
+    function(req, email, password, done, fullname) {
 
         // asynchronous
         // User.findOne wont fire unless data is sent back
@@ -63,13 +64,18 @@ module.exports = function(passport) {
 
                 // set the user's local credentials
                 newUser.local.email    = email;
-                newUser.local.password = newUser.generateHash(password);
+                newUser.local.password = password;
+                newUser.local.fullname = fullname;
+                newUser.local.role = "default";
 
                 // save the user
                 newUser.save(function(err) {
-                    if (err)
+                    if (err) {
                         throw err;
+                    } 
+                    console.log(newUser);
                     return done(null, newUser);
+                    
                 });
             }
 
@@ -106,7 +112,7 @@ module.exports = function(passport) {
                 return done(null, false, req.flash('loginMessage', 'No user found.')); // req.flash is the way to set flashdata using connect-flash
 
             // if the user is found but the password is wrong
-            if (!user.validPassword(password))
+            if (user.password === password)
                 return done(null, false, req.flash('loginMessage', 'Oops! Wrong password.')); // create the loginMessage and save it to session as flashdata
 
             // all is well, return successful user
