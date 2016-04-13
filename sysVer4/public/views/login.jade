@@ -7,32 +7,72 @@ html
     link(rel='stylesheet', href='libs/font-awesome/css/font-awesome.min.css')
     // load fontawesome
     style.
-      body        { padding-top:80px; }
+      body              { padding-top:80px; }
+      header            { background:#eaeaea;
+                          text-align:center;
+                          padding-bottom:15px;
+                          border-bottom:solid 1px #d3d3d3; }
+      .neutralForm      { padding-bottom:15px;
+                          border-bottom:solid 1px #d3d3d3;
+                          background:#eaeaea; }
+      .alarmForm      { padding-bottom:15px;
+                          border-bottom:solid 1px #ebccd1;
+                          background:#f2dede;
+                          color:#a94442; }
+      footer            { background:#eaeaea; }
       
   body
     .container
-      .col-sm-6.col-sm-offset-3
-        h1
-          span.fa.fa-sign-in
-          |  Login Page
-        // show any messages that come back with authentication
+      .row
+        header.col-xs-12.text-align-center
+          h1 Codesharers Club
+          h3
+            i 
+              span.fa.fa-sign-in
+              |  Login Page
+          // show any messages that come back with authentication
         
-    if message.length
-  .alert.alert-danger= message
+      if message.length
+        .row
+          .alarmForm.col-xs-12
+            .alert.alert-danger= message
+                  // LOGIN FORM
+            form(action='/login', method='post')
+              .form-group
+                label Email
+                input.form-control(type='text', name='email')
+              .form-group
+                label Password
+                input.form-control(type='password', name='password')
+              button.btn.btn-warning.btn-lg(type='submit') Login
+            hr
+            p
+              | Need an account? 
+              a(href='/signup') Signup
+            p
+              | Or go 
+              a(href='/') home
+              | .
+      else
         // LOGIN FORM
-        form(action='/login', method='post')
-          .form-group
-            label Email
-            input.form-control(type='text', name='email')
-          .form-group
-            label Password
-            input.form-control(type='password', name='password')
-          button.btn.btn-warning.btn-lg(type='submit') Login
-        hr
-        p
-          | Need an account? 
-          a(href='/signup') Signup
-        p
-          | Or go 
-          a(href='/') home
-          | .
+        .row
+          .neutralForm.col-xs-12
+            form(action='/login', method='post')
+              .form-group
+                label Email
+                input.form-control(type='text', name='email')
+              .form-group
+                label Password
+                input.form-control(type='password', name='password')
+              button.btn.btn-warning.btn-lg(type='submit') Login
+            hr
+            p
+              | Need an account? 
+              a(href='/signup') Signup
+            p
+              | Or go 
+              a(href='/') home
+              | .
+      .row
+          footer.col-xs-12
+            h6 Lorem ipsum dolor sit amet
