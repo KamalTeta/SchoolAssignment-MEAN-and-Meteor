@@ -6,7 +6,6 @@
     
        <tr>
         <th>User email</th>
-        <th>Name</th>
         <th>Role</th>
         <th></th>
         <th></th>
@@ -15,7 +14,6 @@
 
       <tr ng-repeat="user in users">
         <td>{{ user.local.email }}</td>
-        <td>{{ user.local.fullname }}</td>
         <td>{{ user.local.role }}</td>
         <td><button class="btn btn-success" data-toggle="modal" ng-click="openEditUserModal(user._id)" data-target="#modalUser">Edit</button></td>
         <td><button class="btn btn-danger" ng-click="deleteUser(user._id)" data-toggle="modal" data-target="#modalConfirmDelete">Delete</button></td>
