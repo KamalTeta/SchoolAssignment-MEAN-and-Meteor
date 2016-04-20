@@ -30,12 +30,13 @@ html
             i 
               span.fa.fa-sign-in
               |  Login Page
-          // show any messages that come back with authentication
         
       if message.length
         .row
           .alarmForm.col-xs-12
-            .alert.alert-danger= message
+            br
+            p 
+              = message
                   // LOGIN FORM
             form(action='/login', method='post')
               .form-group
@@ -44,8 +45,8 @@ html
               .form-group
                 label Password
                 input.form-control(type='password', name='password')
-              button.btn.btn-warning.btn-lg(type='submit') Login
-            hr
+              button.btn.btn-success.btn-lg(type='submit') Login
+            br
             p
               | Need an account? 
               a(href='/signup') Signup
@@ -57,6 +58,7 @@ html
         // LOGIN FORM
         .row
           .neutralForm.col-xs-12
+            br
             form(action='/login', method='post')
               .form-group
                 label Email
@@ -64,8 +66,8 @@ html
               .form-group
                 label Password
                 input.form-control(type='password', name='password')
-              button.btn.btn-warning.btn-lg(type='submit') Login
-            hr
+              button.btn.btn-success.btn-lg(type='submit') Login
+            br
             p
               | Need an account? 
               a(href='/signup') Signup
@@ -74,5 +76,5 @@ html
               a(href='/') home
               | .
       .row
-          footer.col-xs-12
+        footer.col-xs-12
             h6 Lorem ipsum dolor sit amet
