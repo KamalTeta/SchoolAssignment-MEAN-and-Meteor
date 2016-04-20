@@ -12,7 +12,7 @@ var userSchema = mongoose.Schema({
         fullname     : String,
         role         : String
     }
-    
+
 
 });
 

@@ -1,5 +1,4 @@
 // config/passport.js
-
 // load all the things we need
 var LocalStrategy   = require('passport-local').Strategy;
 
@@ -70,8 +69,7 @@ module.exports = function(passport) {
                 newUser.save(function(err) {
                     if (err) {
                         throw err;
-                    } 
-                    console.log(newUser);
+                    }  
                     return done(null, newUser);
                     
                 });

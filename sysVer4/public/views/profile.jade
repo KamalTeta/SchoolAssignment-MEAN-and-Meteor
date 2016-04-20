@@ -12,6 +12,9 @@ html
         h1
           span.fa.fa-anchor
           |  Profile Page
+        - var userRole = user.local.role
+        if userRole === 'admin'
+          a.btn.btn-default.btn-sm(href='/admin') Admin Panel
         a.btn.btn-default.btn-sm(href='/logout') Logout
       .row
         // LOCAL INFORMATION
@@ -20,4 +23,5 @@ html
             h3
               span.fa.fa-user
               |  Local
-            p Welcome to Your Profile
+            p Welcome to Your Profile #{user.local.role}
+
