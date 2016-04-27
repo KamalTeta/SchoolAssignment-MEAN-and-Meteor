@@ -13,8 +13,8 @@
       </tr>
 
       <tr ng-repeat="contentItem in content">
-        <td>{{ contentItem.title }}</td>
-        <td>{{ contentItem.author }}</td>
+        <td>{{ contentItem.local.title }}</td>
+        <td>{{ contentItem.local.author }}</td>
         <td><a href="#/content/item/{{ contentItem._id }}" class="btn btn-success">Edit</a></td>
         <td><button class="btn btn-danger" ng-click="deleteContentItem(contentItem._id)" data-toggle="modal" data-target="#modalConfirmDeleteContentItem">Delete</button></td>
       </tr>
@@ -32,7 +32,7 @@
         </div>
         <div class="modal-body">
           <h5>Title</h5>
-          <p>{{ contentItem.title }}</p>
+          <p>{{ contentItem.local.title }}</p>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
