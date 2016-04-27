@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var mongoose = require('mongoose');
-var Content = require('../models/user');
+var Content = require('../models/content');
 
 
 router.get('/:id', function(req, res, next) {
