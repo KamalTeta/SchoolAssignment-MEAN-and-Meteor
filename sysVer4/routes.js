@@ -114,18 +114,14 @@ module.exports = function(app, passport) {
     });
 
     app.get('/admin', isLoggedIn, function(req, res) {
-        console.log("test", req.user);
-        if(!req.user) {
-            res.redirect('/');
-        }
         if(req.user.local.role === 'admin') {
             res.render('admin/index', {
                 user: req.user,
             });
         }
-        // else {
-        //     res.redirect('/');
-        // }
+        else {
+            res.redirect('/');
+        }
     });
 };
 
