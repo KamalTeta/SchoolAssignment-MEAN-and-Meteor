@@ -31,6 +31,7 @@ require('./config/passport')(passport); // pass passport for configuration
 
 var usersRoutes = require('./routes/usersRoutes');
 var contentRoutes = require('./routes/contentRoutes');
+var tagsRoutes = require('./routes/tagsRoutes');
 // set up our express application
 app.use(morgan('dev')); // log every request to the console
 app.use(cookieParser()); // read cookies (needed for auth)
@@ -73,6 +74,7 @@ require('./routes.js')(app,passport); // load our routes and pass in our app and
 // start app ===============================================
 app.use('/api/admin/users', usersRoutes);
 app.use('/api/admin/content', contentRoutes);
+app.use('/api/admin/tags', tagsRoutes);
 
 // startup our app at http://localhost:8080
 app.listen(port);               

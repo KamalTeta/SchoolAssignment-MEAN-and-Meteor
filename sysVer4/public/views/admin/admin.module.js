@@ -21,6 +21,10 @@
         			templateUrl: './content/content.view.html',
         			controller: 'contentController'
         		})
+                .when('/tags/', {
+                    templateUrl: './tags/tags.view.html',
+                    controller: 'tagsController'
+                })
         		.when("/", {
         			templateUrl: './dashboard/dashboard.view.html',
         			controller: 'dashboardController'
