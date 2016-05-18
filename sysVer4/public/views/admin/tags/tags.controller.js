@@ -14,10 +14,10 @@
     };
     
     var resetTags = function(){
-      $scope.tags = $scope.tags || {};
-      $scope.tags.local = {};
-      $scope.tags.local.name = "";
-      $scope.tags.local._id = null;
+      $scope.tag = $scope.tag || {};
+      $scope.tag.local = {};
+      $scope.tag.local.name = "";
+      $scope.tag.local._id = null;
     };
         
     $scope.openCreateTagsModal = function(){
@@ -34,7 +34,6 @@
     };
     
     $scope.saveTag = function(){
-      console.log($scope.tag);
       tagsService.saveTag($scope.tag).then(function(){
         getTags();
       });
