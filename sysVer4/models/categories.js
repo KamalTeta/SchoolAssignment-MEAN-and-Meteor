@@ -1,9 +1,9 @@
-// /models/tags.js
+// /models/categories.js
 // load the things we need
 var mongoose = require('mongoose');
 
 // define the schema for our tags model
-var tagsSchema = mongoose.Schema({
+var categoriesSchema = mongoose.Schema({
 
     local : {
         name : String
@@ -15,4 +15,4 @@ var tagsSchema = mongoose.Schema({
 // methods ======================
 
 // create the model for tags and expose it to our app
-module.exports = mongoose.model('Tags', tagsSchema);
+module.exports = mongoose.model('Categories', categoriesSchema);

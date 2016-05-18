@@ -2,7 +2,7 @@
   "use strict";
   
   angular
-    .module("admin", ["admin.dashboard", "admin.users", "admin.content", "admin.contentItem", "ngResource", "ngRoute"])
+    .module("admin", ["admin.dashboard", "admin.users", "admin.content", "admin.contentItem", "admin.tags", "admin.categories", "ngResource", "ngRoute"])
     .config(function($routeProvider){
         	$routeProvider
         		.when('/users/', {
@@ -24,6 +24,10 @@
                 .when('/tags/', {
                     templateUrl: './tags/tags.view.html',
                     controller: 'tagsController'
+                })
+                .when('/categories/', {
+                    templateUrl: './categories/categories.view.html',
+                    controller: 'categoriesController'
                 })
         		.when("/", {
         			templateUrl: './dashboard/dashboard.view.html',
