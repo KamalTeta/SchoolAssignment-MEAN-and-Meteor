@@ -7,6 +7,8 @@
        <tr>
         <th>Title</th>
         <th>Author</th>
+        <th>Categories</th>
+        <th>Tags</th>
         <th></th>
         <th></th>
         
@@ -15,6 +17,8 @@
       <tr ng-repeat="contentItem in content">
         <td>{{ contentItem.local.title }}</td>
         <td>{{ contentItem.local.author }}</td>
+        <td>{{ contentItem.local.categories.category }}</td>
+        <td>{{ contentItem.local.tags.tag }}</td>
         <td><a href="#/content/item/{{ contentItem._id }}" class="btn btn-success">Edit</a></td>
         <td><button class="btn btn-danger" ng-click="deleteContentItem(contentItem._id)" data-toggle="modal" data-target="#modalConfirmDeleteContentItem">Delete</button></td>
       </tr>

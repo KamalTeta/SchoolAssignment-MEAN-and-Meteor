@@ -8,7 +8,13 @@ var contentSchema = mongoose.Schema({
     local            : {
         title        : String,
         content     : String,
-        author     : String
+        author     : String,
+        categories : {
+        	category: String
+        },
+        tags: {
+        	tag: String
+        },
     }
 
 
