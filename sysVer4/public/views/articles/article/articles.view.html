@@ -5,15 +5,18 @@
     <div class="row">
       <div class="col-sm-6">
         <h6>Search based on categories:</h6>
-        <span ng-repeat="category in categories">
-          <button id="btn" ng-click="searchText" class="btn btn-primary">{{ category.local.name }}</button>
-        </span>
+        <input type="button" value="Code" ng-click="searchText = 'Code'" class="btn btn-primary">
+        <input type="button" value="Report" ng-click="searchText = 'Report'" class="btn btn-primary">
+        <input type="button" value="Design" ng-click="searchText = 'Design'" class="btn btn-primary">
+        <input type="button" value="Web Development" ng-click="searchText = 'Web Development'" class="btn btn-primary">
       </div>
       <div class="col-sm-6">
         <h6>Search based on tags:</h6>
-        <span ng-repeat="tag in tags">
-          <input type="button" ng-click="searchText = '{{tag.local.name}}'" value="{{ tag.local.name }}" class="btn btn-primary" >
-        </span>
+        <input type="button" value="HTML" ng-click="searchText = 'HTML'" class="btn btn-primary">
+        <input type="button" value="CSS" ng-click="searchText = 'CSS'" class="btn btn-primary">
+        <input type="button" value="MEAN Stack" ng-click="searchText = 'MEAN Stack'" class="btn btn-primary">
+        <input type="button" value="Meteor.js" ng-click="searchText = 'Meteor.js'" class="btn btn-primary">
+        <input type="button" value="PHP" ng-click="searchText = 'Meteor.js'" class="btn btn-primary">
       </div>
     </div>
   </section>
