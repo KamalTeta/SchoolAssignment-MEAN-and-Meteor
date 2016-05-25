@@ -106,6 +106,17 @@ module.exports = function(app, passport) {
     });
 
     // =====================================
+    // ARTICLES SECTION =====================
+    // =====================================
+    // we will want this protected so you have to be logged in to visit
+    // we will use route middleware to verify this (the isLoggedIn function)
+    app.get('/articles', isLoggedIn, function(req, res) {
+        res.render('articles/index.jade', {
+            user : req.user, // get the user out of session and pass to template
+        });
+    });
+
+    // =====================================
     // LOGOUT ==============================
     // =====================================
     app.get('/logout', function(req, res) {
@@ -113,6 +124,9 @@ module.exports = function(app, passport) {
         res.redirect('/');
     });
 
+    // =====================================
+    // ADMIN ===============================
+    // =====================================
     app.get('/admin', isLoggedIn, function(req, res) {
         if(req.user.local.role === 'admin') {
             res.render('admin/index', {

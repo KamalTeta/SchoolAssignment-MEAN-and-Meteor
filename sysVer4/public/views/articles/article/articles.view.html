@@ -1,0 +1,29 @@
+<div class="container">
+  <h1>List of articles</h1>
+  <section class="search-items">
+    <input ng-model="searchText" placeholder="Search for articles" class="search-text">
+    <div class="row">
+      <div class="col-sm-6">
+        <h6>Search based on categories:</h6>
+        <span ng-repeat="category in categories">
+          <button id="btn" ng-click="searchText" class="btn btn-primary">{{ category.local.name }}</button>
+        </span>
+      </div>
+      <div class="col-sm-6">
+        <h6>Search based on tags:</h6>
+        <span ng-repeat="tag in tags">
+          <input type="button" ng-click="searchText = '{{tag.local.name}}'" value="{{ tag.local.name }}" class="btn btn-primary" >
+        </span>
+      </div>
+    </div>
+  </section>
+  <section class="articles" ng-repeat="contentItem in content | filter:searchText">
+    <article class="well">
+      <h3>{{ contentItem.local.title }}</h3>
+      <p>{{ contentItem.local.content }}</p>
+      <span><b>Article author: {{ contentItem.local.author }}</b></span><br/>
+      <span class="label label-primary">{{ contentItem.local.categories.category }}</span>
+      <span class="label label-primary">{{ contentItem.local.tags.tag }}</span>
+    </article>
+  </section>
+</div>
