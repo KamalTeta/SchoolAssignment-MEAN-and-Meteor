@@ -1,0 +1,194 @@
+
+
+/* CSS declarations go here */
+body {
+  font-family: sans-serif;
+  background-color: #c1d59a;
+  background-image: linear-gradient(to bottom, #c1d59a, #c1b951 100%);
+  background-attachment: fixed;
+
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  padding: 0;
+  margin: 0;
+
+  font-size: 14px;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+  height: 100%;
+}
+
+header {
+  background: rgba(255,255,255,.33);
+  position: relative;
+  height: calc(15% - 5px);
+  text-align: center;
+  border-bottom: 5px solid white;
+}
+
+#login-buttons {
+  display: inline-block;
+}
+
+h1 {
+  font-size: 3em;
+  display: inline-block;
+  color: white;
+}
+h2 {
+  font-size: 2em;
+  display: inline-block;
+  color: white;
+}
+
+
+form {
+  margin-top: 10px;
+  margin-bottom: -10px;
+  position: relative;
+}
+
+/*.new-task input {
+  box-sizing: border-box;
+  padding: 10px 0;
+  background: transparent;
+  border: none;
+  width: 100%;
+  padding-right: 80px;
+  font-size: 1em;
+}
+
+.new-task input:focus{
+  outline: 0;
+}*/
+
+.txtTitle{
+  background: rgba(0,0,0,.1);
+  border: none;
+  width: 66%;
+  padding: 5px;
+  font-size:1.5em;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+.delete {
+  font-weight: bold;
+  background: none;
+  font-size: 1em;
+  border: none;
+  position: relative;
+  padding:0;
+}
+.delete:hover{
+  cursor: pointer;
+}
+
+li {
+  position: relative;
+  list-style: none;
+  padding: 15px;
+  margin-left: -15px;
+  border-bottom: #eee solid 1px;
+  width:calc(100% - 34px);
+}
+
+li .text {
+  margin-left: 10px;
+}
+
+li.checked {
+  color: #888;
+}
+
+li.checked .text {
+  text-decoration: line-through;
+}
+
+li.private {
+  background: rgba(0,0,0,.1);
+  border-color: #eee;
+}
+li:hover{
+  background: rgba(0,0,0,.2);
+}
+
+header .hide-completed {
+  float: right;
+}
+
+.toggle-private {
+  font-size: .75em;
+  border:none;
+  border-radius: 0;
+  background-color: rgba(0,0,0,0);
+  color: white;
+  padding: 0;
+}
+.toggle-private:hover{
+  cursor: pointer;
+  font-size: 1em
+}
+.customContent{
+  height: 85%;
+  overflow: hidden;
+  background: rgba(255,255,255,.33);
+  position: relative;
+}
+.half{
+  width:50%;
+  float: left;
+  height: 100%;
+  position: absolute;
+  padding: 15px;
+}
+.secondHalf{
+  overflow-y:scroll;
+  left:50%;
+  width:calc(50% + 15px);
+  border-left: 5px solid white;
+}
+@media (max-width: 960px) {
+  .container{
+    width: 100%;
+  }
+}
+@media (max-width: 600px) {
+  h1{font-size: 2em;}
+  li {
+    padding: 12px 15px;
+  }
+
+  .search {
+    width: 150px;
+    clear: both;
+  }
+
+  .new-task input {
+    padding-bottom: 5px;
+  }
+  .half{
+    width: 100%;
+    position: relative;
+    height: 33%;
+  }
+  .secondHalf{
+  overflow-y:scroll;
+  width:calc(100% + 10px);
+  left: 0;
+  border-left: none;
+  height: 66%;
+  }
+
+}
+

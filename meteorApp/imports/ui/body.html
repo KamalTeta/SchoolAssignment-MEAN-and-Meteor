@@ -1,0 +1,43 @@
+<body>
+
+  <div class="container">
+
+    <header>
+      <!--h1>Todo List ({{incompleteCount}})</h1-->
+      <h1>Frameworks Chat</h1>
+    </header>
+
+    <div class="customContent">
+
+      <div class="half">
+      <h2>
+        Welcome
+      {{> loginButtons}}
+            {{#if currentUser}} 
+      {{/if}}
+    </h2>
+      <br/>
+      <label class="hide-completed">
+        <input type="checkbox" />
+        Hide read messages
+      </label>
+        <form class="new-task">
+          <input class="txtTitle" type="text" name="text" maxlength="30" placeholder="Message" autofocus  />
+        </form>
+
+      </div>
+
+      <div class="half secondHalf">
+        <ul>
+          <h2>Latest messages:</h2>
+          {{#each tasks}}
+            {{> task}}
+          {{/each}}
+        </ul>
+      </div>
+
+    </div>
+
+  </div>
+
+</body>
